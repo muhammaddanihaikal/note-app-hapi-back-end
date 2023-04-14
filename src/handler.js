@@ -118,6 +118,7 @@ const deleteNoteByIdHandler = (request, h) => {
 
   // kalo index ada
   if (index !== -1) {
+    // penghapusan data dalam array sesuai index
     notes.splice(index, 1);
 
     // berikan response
