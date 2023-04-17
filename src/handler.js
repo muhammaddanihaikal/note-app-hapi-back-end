@@ -96,6 +96,9 @@ const editNoteByIdHandler = (request, h) => {
     const response = h.response({
       status: "success",
       message: "Catatan berhasil diperbarui",
+      data: {
+        note: notes[index],
+      },
     });
     response.code(200);
     return response;
@@ -133,7 +136,7 @@ const deleteNoteByIdHandler = (request, h) => {
   // kalo index ga ada
   const response = h.response({
     status: "fail",
-    message: "Catatan gagal dihapus. Id tidak ditemukan",
+    message: "Catatan tidak ditemukan",
   });
   response.code(404);
   return response;
